@@ -1,3 +1,4 @@
+using BLOBby.Commands;
 using BLOBby.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -5,6 +6,7 @@ namespace BLOBby.Controllers;
 
 [ApiController]
 [Route("api/blob/bucket")]
+
 public class BucketController : ControllerBase
 {
     private readonly IBucketService _bucketService;
@@ -44,7 +46,10 @@ public class BucketController : ControllerBase
     [HttpGet("{bucketName}/objects/{objectKey}")]
     public async Task<IActionResult> GetFromBucket(string bucketName, string objectKey)
     {
-        var (stream, contentType) = await _bucketService.GetObjectAsync(bucketName, objectKey);
+        var result = await _bucketService.GetObjectAsync(bucketName, objectKey);
+        if (result is null) return NotFound();
+
+        var (stream, contentType) = result.Value;
         return File(stream, contentType);
     }
 }
