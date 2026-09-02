@@ -79,7 +79,7 @@ public class BucketService : IBucketService
         
         await File.WriteAllTextAsync(pathToFile + ".meta", contentType);
 
-        return $"https://178.236.243.241:7845/api/blob/bucket/{bucketName}/objects/{objectKey}";
+        return $"http://178.236.243.241:7845/api/blob/bucket/{bucketName}/objects/{objectKey}";
     }
 
     public async Task<(Stream stream, string contentType)?> GetObjectAsync(string bucketName, string objectKey)
