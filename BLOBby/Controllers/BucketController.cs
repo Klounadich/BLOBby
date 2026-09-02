@@ -39,8 +39,7 @@ public class BucketController : ControllerBase
         IFormFile file)
     {
         await using var stream = file.OpenReadStream();
-        await _bucketService.SaveObjectAsync(bucketName, objectKey, stream, file.ContentType);
-        return Ok();
+        return Ok(await _bucketService.SaveObjectAsync(bucketName, objectKey, stream, file.ContentType));
     }
 
     [HttpGet("{bucketName}/objects/{objectKey}")]

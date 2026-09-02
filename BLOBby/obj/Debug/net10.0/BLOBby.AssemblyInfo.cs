@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BLOBby")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fd9b514e68bd6366a37b35d27832e31d8f27d3f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13297ea1248709f97c73380eb089501638ff2e22")]
 [assembly: System.Reflection.AssemblyProductAttribute("BLOBby")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BLOBby")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
